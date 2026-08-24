@@ -1,442 +1,692 @@
-<!DOCTYPE html> 
-<html lang="tr"> 
-<head> 
-<meta charset="UTF-8"> 
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-<title>GKC Elektrik ve İnşaat | Ankara</title> 
-<meta name="description" content="GKC Elektrik ve İnşaat - Ankara genelinde elektrik, aydınlatma, montaj, tadilat ve inşaat hizmetleri."> 
-<style> 
-:root{ 
---navy:#073b70; 
---navy-dark:#05294d; 
---orange:#f7941d; 
---orange-dark:#dc7610; 
---white:#ffffff; 
---light:#f5f8fc; 
---text:#172033; 
---muted:#667085; 
-} 
-*{ margin:0; padding:0; box-sizing:border-box; } 
-html{ scroll-behavior:smooth; } 
-body{ font-family:Arial,Helvetica,sans-serif; background:var(--light); color:var(--text); } 
-a{ text-decoration:none; } 
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
 
-/* ========================= NAVBAR ========================= */ 
-.navbar{ position:sticky; top:0; z-index:999; background:rgba(5,41,77,.97); box-shadow:0 4px 20px rgba(0,0,0,.12); } 
-.nav-inner{ max-width:1200px; margin:auto; min-height:78px; padding:0 22px; display:flex; align-items:center; justify-content:space-between; } 
-.nav-brand{ display:flex; align-items:center; gap:12px; color:white; font-weight:900; font-size:18px; } 
-.nav-brand svg{ width:44px; height:44px; border-radius:10px; } 
-.nav-brand span{ color:var(--orange); } 
-.nav-menu{ display:flex; gap:28px; list-style:none; } 
-.nav-menu a{ color:white; font-size:14px; font-weight:bold; transition:.2s; } 
-.nav-menu a:hover{ color:var(--orange); } 
+<title>Yatırım Yeri</title>
 
-/* ========================= HERO ========================= */ 
-.hero{ min-height:720px; position:relative; display:flex; align-items:center; overflow:hidden; background: linear-gradient(120deg,rgba(5,41,77,.98),rgba(7,59,112,.90)); } 
-.hero::before{ content:""; position:absolute; width:650px; height:650px; border-radius:50%; background:rgba(247,148,29,.09); right:-220px; top:-180px; } 
-.hero::after{ content:""; position:absolute; width:350px; height:350px; border-radius:50%; border:2px solid rgba(247,148,29,.15); right:100px; bottom:-170px; } 
-.hero-inner{ max-width:1200px; width:100%; margin:auto; padding:70px 22px; display:grid; grid-template-columns:1.1fr .9fr; gap:50px; align-items:center; position:relative; z-index:2; } 
-.hero-text{ color:white; } 
-.hero-label{ display:inline-block; padding:8px 15px; border-radius:30px; background:rgba(247,148,29,.15); border:1px solid rgba(247,148,29,.35); color:#ffb04d; font-size:13px; font-weight:bold; margin-bottom:22px; } 
-.hero h1{ font-size:clamp(42px,6vw,76px); line-height:1.02; letter-spacing:-3px; margin-bottom:22px; } 
-.hero h1 span{ color:var(--orange); } 
-.hero-text p{ max-width:650px; color:#d9e5f2; font-size:19px; line-height:1.7; } 
-.hero-buttons{ display:flex; flex-wrap:wrap; gap:13px; margin-top:32px; } 
-.hero-btn{ padding:15px 24px; border-radius:12px; font-weight:900; transition:.25s; } 
-.hero-btn:hover{ transform:translateY(-3px); } 
-.btn-orange{ background:var(--orange); color:#10253c; } 
-.btn-whatsapp{ background:#16a34a; color:white; } 
-.hero-location{ margin-top:25px; color:#cbd8e7; font-size:14px; } 
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:Arial,sans-serif;
+}
 
-/* LOGO BOX */ 
-.hero-logo{ display:flex; justify-content:center; align-items:center; } 
-.logo-box{ width:min(430px,80vw); aspect-ratio:1; border-radius:35px; background:white; padding:35px; box-shadow: 0 30px 80px rgba(0,0,0,.35), 0 0 0 1px rgba(255,255,255,.15); display:flex; align-items:center; justify-content:center; } 
-.logo-box svg{ width:100%; height:100%; } 
+body{
+    background:#07111f;
+    color:white;
+    min-height:100vh;
+}
 
-/* ========================= QUICK SERVICES ========================= */ 
-.quick{ max-width:1050px; margin:-55px auto 0; position:relative; z-index:10; background:white; border-radius:20px; box-shadow:0 15px 45px rgba(7,59,112,.12); display:grid; grid-template-columns:repeat(3,1fr); overflow:hidden; } 
-.quick-item{ padding:27px 20px; text-align:center; border-right:1px solid #e5eaf0; } 
-.quick-item:last-child{ border-right:0; } 
-.quick-icon{ font-size:30px; margin-bottom:8px; } 
-.quick-item strong{ display:block; color:var(--navy); } 
-.quick-item span{ font-size:13px; color:var(--muted); } 
+button,input,select{
+    font:inherit;
+}
 
-/* ========================= GENERAL ========================= */ 
-.container{ max-width:1200px; margin:auto; padding:85px 22px; } 
-.section-head{ max-width:720px; margin:0 auto 50px; text-align:center; } 
-.section-head .mini{ color:var(--orange-dark); font-size:13px; font-weight:900; text-transform:uppercase; letter-spacing:2px; } 
-.section-head h2{ color:var(--navy-dark); font-size:clamp(30px,5vw,46px); margin:8px 0 12px; } 
-.section-head p{ color:var(--muted); } 
+button{
+    cursor:pointer;
+}
 
-/* ========================= ABOUT ========================= */ 
-.about{ background:white; } 
-.about-grid{ display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; } 
-.about-image{ min-height:440px; border-radius:25px; overflow:hidden; background: linear-gradient(rgba(5,41,77,.12),rgba(5,41,77,.12)), url("https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=1000&q=85"); background-size:cover; background-position:center; } 
-.about-content h2{ color:var(--navy-dark); font-size:40px; margin-bottom:20px; } 
-.about-content h2 span{ color:var(--orange); } 
-.about-content p{ color:var(--muted); margin-bottom:16px; } 
-.check-list{ list-style:none; margin-top:25px; } 
-.check-list li{ margin:13px 0; font-weight:bold; } 
-.check{ display:inline-flex; width:26px; height:26px; align-items:center; justify-content:center; border-radius:50%; background:#fff0dc; color:var(--orange-dark); margin-right:8px; } 
+.hidden{
+    display:none!important;
+}
 
-/* ========================= SERVICES ========================= */ 
-.services{ background:var(--light); } 
-.services-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; } 
-.service{ background:white; padding:30px; border-radius:20px; border:1px solid #e5ebf2; transition:.25s; } 
-.service:hover{ transform:translateY(-7px); border-color:#f4c27e; box-shadow:0 15px 35px rgba(7,59,112,.09); } 
-.service-icon{ width:58px; height:58px; display:flex; align-items:center; justify-content:center; border-radius:16px; background:#fff2df; font-size:28px; margin-bottom:18px; } 
-.service h3{ color:var(--navy); margin-bottom:9px; } 
-.service p{ color:var(--muted); font-size:14px; } 
+/* =========================
+   18+
+========================= */
 
-/* ========================= WHY ========================= */ 
-.why{ background:var(--navy-dark); color:white; } 
-.why .section-head h2{ color:white; } 
-.why .section-head p{ color:#c7d5e5; } 
-.why-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:20px; } 
-.why-card{ padding:30px 20px; text-align:center; border:1px solid rgba(255,255,255,.1); border-radius:18px; background:rgba(255,255,255,.04); } 
-.why-icon{ font-size:35px; margin-bottom:13px; } 
-.why-card h3{ margin-bottom:8px; } 
-.why-card p{ color:#c7d5e5; font-size:13px; } 
+#ageScreen{
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    background:
+    radial-gradient(circle at top,#1b426d,#07111f 70%);
+}
 
-/* ========================= PORTFOLIO ========================= */ 
-.portfolio{ background:white; } 
-.portfolio-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:25px; } 
-.portfolio-card{ overflow:hidden; border-radius:20px; background:white; box-shadow:0 8px 30px rgba(0,0,0,.08); border:1px solid #e6ebf0; } 
-.portfolio-card img{ width:100%; height:280px; display:block; object-fit:cover; } 
-.portfolio-content{ padding:22px; } 
-.portfolio-content h3{ color:var(--navy); margin-bottom:7px; } 
-.portfolio-content p{ color:var(--muted); } 
+.ageBox{
+    width:100%;
+    max-width:430px;
+    padding:30px 24px;
+    text-align:center;
+    background:#101c2d;
+    border:1px solid #294563;
+    border-radius:24px;
+    box-shadow:0 20px 70px #0009;
+}
 
-/* ========================= CTA ========================= */ 
-.cta{ background: linear-gradient(120deg,var(--navy-dark),var(--navy)); color:white; text-align:center; } 
-.cta h2{ font-size:clamp(32px,5vw,50px); margin-bottom:12px; } 
-.cta h2 span{ color:var(--orange); } 
-.cta p{ color:#d3deea; margin-bottom:27px; } 
-.cta-buttons{ display:flex; justify-content:center; gap:12px; flex-wrap:wrap; } 
+.ageIcon{
+    font-size:65px;
+    margin-bottom:15px;
+}
 
-/* ========================= CONTACT ========================= */ 
-.contact{ background:var(--light); } 
-.contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:25px; } 
-.contact-card{ background:white; padding:35px; border-radius:20px; border:1px solid #e4eaf0; } 
-.contact-card h3{ color:var(--navy); font-size:24px; margin-bottom:20px; } 
-.contact-row{ display:flex; gap:15px; align-items:center; margin:18px 0; } 
-.contact-icon{ width:48px; height:48px; border-radius:13px; background:#fff1dd; display:flex; align-items:center; justify-content:center; font-size:21px; } 
-.contact-row small{ color:#8a95a5; } 
-.contact-row a{ color:var(--navy); font-weight:900; } 
-.map-box{ min-height:300px; border-radius:20px; background: linear-gradient(rgba(5,41,77,.85),rgba(5,41,77,.85)), url("https://images.unsplash.com/photo-1523731407965-2430cd12f5e4?auto=format&fit=crop&w=1000&q=85"); background-size:cover; background-position:center; display:flex; align-items:center; justify-content:center; text-align:center; color:white; } 
-.map-box h3{ color:var(--orange); font-size:36px; margin-bottom:10px; } 
+.ageBox h1{
+    margin-bottom:14px;
+}
 
-/* ========================= FOOTER ========================= */ 
-footer{ background:#031d36; color:#aebfd1; text-align:center; padding:35px 20px; } 
-footer strong{ color:white; } 
-footer span{ color:var(--orange); } 
+.ageBox p{
+    color:#aebdd0;
+    line-height:1.6;
+    margin-bottom:18px;
+}
 
-/* ========================= FLOATING ========================= */ 
-.floating{ position:fixed; right:18px; bottom:18px; z-index:500; display:flex; flex-direction:column; gap:10px; } 
-.float{ width:57px; height:57px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:24px; box-shadow:0 8px 25px rgba(0,0,0,.25); } 
-.float-phone{ background:var(--orange); } 
-.float-wa{ background:#16a34a; } 
+.warning{
+    padding:14px;
+    margin-bottom:20px;
+    border-radius:12px;
+    background:#302216;
+    border:1px solid #70491d;
+    color:#ffd18b;
+    font-size:13px;
+}
 
-/* ========================= MOBILE ========================= */ 
-@media(max-width:850px){ 
-.nav-menu{ display:none; } 
-.hero-inner{ grid-template-columns:1fr; text-align:center; } 
-.hero-text p{ margin:auto; } 
-.hero-buttons{ justify-content:center; } 
-.hero-logo{ order:-1; } 
-.logo-box{ width:270px; padding:22px; } 
-.about-grid{ grid-template-columns:1fr; } 
-.services-grid{ grid-template-columns:repeat(2,1fr); } 
-.why-grid{ grid-template-columns:repeat(2,1fr); } 
-.contact-grid{ grid-template-columns:1fr; } 
-} 
-@media(max-width:600px){ 
-.hero{ min-height:700px; } 
-.hero h1{ font-size:43px; letter-spacing:-1.5px; } 
-.hero-text p{ font-size:16px; } 
-.logo-box{ width:220px; } 
-.quick{ margin:-35px 15px 0; grid-template-columns:1fr; } 
-.quick-item{ border-right:0; border-bottom:1px solid #e5eaf0; } 
-.quick-item:last-child{ border-bottom:0; } 
-.services-grid, .why-grid, .portfolio-grid{ grid-template-columns:1fr; } 
-.container{ padding:60px 17px; } 
-.about-image{ min-height:280px; } 
-.portfolio-card img{ height:220px; } 
-.hero-btn{ width:100%; } 
-.hero-buttons{ width:100%; } 
-} 
-</style> 
-</head> 
-<body> 
-<!-- NAVBAR --> 
-<nav class="navbar"> 
-<div class="nav-inner"> 
-<a href="#" class="nav-brand"> 
-<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-<rect width="200" height="200" rx="40" fill="#05294d"/>
-<path d="M40 140 L100 50 L160 140" stroke="#f7941d" stroke-width="16" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-<polygon points="105,75 80,115 100,115 90,150 120,105 100,105" fill="#f7941d"/>
-</svg>
-<div> GKC <span>ELEKTRİK & İNŞAAT</span> </div> 
-</a> 
-<ul class="nav-menu"> 
-<li><a href="#hakkimizda">Hakkımızda</a></li> 
-<li><a href="#hizmetler">Hizmetler</a></li> 
-<li><a href="#calismalar">Çalışmalar</a></li> 
-<li><a href="#iletisim">İletişim</a></li> 
-</ul> 
-</div> 
-</nav> 
+.ageButtons{
+    display:flex;
+    gap:10px;
+}
 
-<!-- HERO --> 
-<header class="hero"> 
-<div class="hero-inner"> 
-<div class="hero-text"> 
-<div class="hero-label"> ⚡ ANKARA GENELİ HİZMET </div> 
-<h1> GKC <span>Elektrik</span> ve İnşaat </h1> 
-<p> Elektrik, aydınlatma, montaj, tadilat ve inşaat işlerinizde güvenilir çözümler. </p> 
-<div class="hero-buttons"> 
-<a href="tel:05102214893" class="hero-btn btn-orange"> 📞 Hemen Ara </a> 
-<a href="https://wa.me/905102214893" target="_blank" class="hero-btn btn-whatsapp"> 💬 WhatsApp </a> 
-</div> 
-<div class="hero-location"> 📍 Ankara ve çevresinde hizmet </div> 
-</div> 
-<div class="hero-logo"> 
-<div class="logo-box"> 
-<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-<rect width="400" height="400" rx="60" fill="#05294d"/>
-<path d="M80 290 L200 100 L320 290" stroke="#f7941d" stroke-width="28" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-<polygon points="210,140 160,220 200,220 180,290 240,200 200,200" fill="#f7941d"/>
-<text x="200" y="340" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="4">GKC</text>
-</svg>
-</div> 
-</div> 
-</div> 
-</header> 
+.ageButtons button{
+    flex:1;
+    padding:14px;
+    border:0;
+    border-radius:11px;
+    font-weight:bold;
+}
 
-<!-- QUICK --> 
-<div class="quick"> 
-<div class="quick-item"> 
-<div class="quick-icon">⚡</div> 
-<strong>Elektrik</strong> <span> Arıza & Tesisat </span> 
-</div> 
-<div class="quick-item"> 
-<div class="quick-icon">🔧</div> 
-<strong>Montaj</strong> <span> Ev & İş Yeri </span> 
-</div> 
-<div class="quick-item"> 
-<div class="quick-icon">🏗️</div> 
-<strong>İnşaat</strong> <span> Tadilat & Tamirat </span> 
-</div> 
-</div> 
+.accept{
+    background:#20c978;
+    color:white;
+}
 
-<!-- ABOUT --> 
-<section class="about" id="hakkimizda"> 
-<div class="container"> 
-<div class="about-grid"> 
-<div class="about-image"></div> 
-<div class="about-content"> 
-<div class="section-head" style="text-align:left;margin:0 0 20px"> 
-<div class="mini"> GKC HAKKINDA </div> 
-</div> 
-<h2> İşinizi <span>ustasına</span> bırakın. </h2> 
-<p> GKC Elektrik ve İnşaat olarak elektrik, aydınlatma, montaj, tadilat ve çeşitli ev içi uygulamalarda hizmet sunuyoruz. </p> 
-<p> Amacımız işi düzgün planlamak, temiz çalışmak ve müşterilerimize güvenilir çözümler sunmaktır. </p> 
-<ul class="check-list"> 
-<li> <span class="check">✓</span> Özenli ve temiz işçilik </li> 
-<li> <span class="check">✓</span> Açık iletişim </li> <li> <span class="check">✓</span> Ankara genelinde hizmet </li> 
-<li> <span class="check">✓</span> Elektrik ve inşaat çözümleri </li> 
-</ul> 
-</div> 
-</div> 
-</div> 
-</section> 
+.reject{
+    background:#263548;
+    color:#b9c4d0;
+}
 
-<!-- SERVICES --> 
-<section class="services" id="hizmetler"> 
-<div class="container"> 
-<div class="section-head"> 
-<div class="mini"> HİZMETLER </div> 
-<h2> Ne Yapıyoruz? </h2> 
-<p> Ev ve iş yerleriniz için elektrikten montaja kadar çeşitli hizmetler. </p> 
-</div> 
-<div class="services-grid"> 
-<div class="service"> 
-<div class="service-icon">⚡</div> 
-<h3> Elektrik Arızaları </h3> 
-<p> Priz, anahtar, sigorta ve çeşitli ev içi elektrik sorunları. </p> 
-</div> 
-<div class="service"> 
-<div class="service-icon">💡</div> 
-<h3> Avize & Aydınlatma </h3> 
-<p> Avize, aplik, LED ve çeşitli aydınlatma montajları. </p> 
-</div> 
-<div class="service"> 
-<div class="service-icon">🔧</div> 
-<h3> Montaj İşleri </h3> 
-<p> Raf, korniş, TV askısı ve çeşitli ev montajları. </p> 
-</div> 
-<div class="service"> 
-<div class="service-icon">🏠</div> 
-<h3> Tadilat & Tamirat </h3> 
-<p> Küçük çaplı duvar, alçı ve ev içi tamirat işleri. </p> 
-</div> 
-<div class="service"> 
-<div class="service-icon">🎨</div> 
-<h3> Boya & Rötuş </h3> 
-<p> Küçük alanlarda boya ve yüzey düzeltme işlemleri. </p> 
-</div> 
-<div class="service"> 
-<div class="service-icon">🏗️</div> 
-<h3> İnşaat İşleri </h3> 
-<p> İhtiyaca uygun çeşitli inşaat ve uygulama işleri. </p> 
-</div> 
-</div> 
-</div> 
-</section> 
+/* =========================
+   HEADER
+========================= */
 
-<!-- WHY --> 
-<section class="why"> 
-<div class="container"> 
-<div class="section-head"> 
-<div class="mini" style="color:#f7941d"> NEDEN GKC? </div> 
-<h2> Güvenilir İşçilik </h2> 
-<p> İşinizi özenle ele alıyoruz. </p> 
-</div> 
-<div class="why-grid"> 
-<div class="why-card"> 
-<div class="why-icon">🤝</div> 
-<h3> Güven </h3> 
-<p> Açık ve anlaşılır iletişim. </p> 
-</div> 
-<div class="why-card"> 
-<div class="why-icon">🧹</div> 
-<h3> Temizlik </h3> 
-<p> Çalışma alanına özen. </p> 
-</div> 
-<div class="why-card"> 
-<div class="why-icon">⚡</div> 
-<h3> Çözüm </h3> 
-<p> İhtiyaca uygun uygulama. </p> 
-</div> 
-<div class="why-card"> 
-<div class="why-icon">📍</div> 
-<h3> Ankara </h3> 
-<p> Ankara genelinde hizmet. </p> 
-</div> 
-</div> 
-</div> 
-</section> 
+header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:#07111fee;
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid #1b3046;
+    padding:16px;
+}
 
-<!-- PORTFOLIO --> 
-<section class="portfolio" id="calismalar"> 
-<div class="container"> 
-<div class="section-head"> 
-<div class="mini"> ÇALIŞMALAR </div> 
-<h2> Yaptığımız İşler </h2> 
-<p> Gerçek çalışmalarınızı buraya ekleyebilirsiniz. </p> 
-</div> 
-<div class="portfolio-grid"> 
-<div class="portfolio-card"> 
-<img src="https://images.unsplash.com/photo-1524484485831-a92ffc0de03f?auto=format&fit=crop&w=1000&q=85" alt="Aydınlatma"> 
-<div class="portfolio-content"> 
-<h3> Aydınlatma Montajı </h3> 
-<p> Avize ve aydınlatma uygulamaları. </p> 
-</div> 
-</div> 
-<div class="portfolio-card"> 
-<img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=1000&q=85" alt="Elektrik"> 
-<div class="portfolio-content"> 
-<h3> Elektrik Çalışmaları </h3> 
-<p> Elektrik ve tesisat uygulamaları. </p> 
-</div> 
-</div> 
-<div class="portfolio-card"> 
-<img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1000&q=85" alt="Montaj"> 
-<div class="portfolio-content"> 
-<h3> Montaj İşleri </h3> 
-<p> Ev içi montaj ve kurulumlar. </p> 
-</div> 
-</div> 
-<div class="portfolio-card"> 
-<img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=1000&q=85" alt="Tadilat"> 
-<div class="portfolio-content"> 
-<h3> Tadilat & Boya </h3> 
-<p> Tadilat ve yüzey uygulamaları. </p> 
-</div> 
-</div> 
-</div> 
-</div> 
-</section> 
+.top{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
 
-<!-- CTA --> 
-<section class="cta"> 
-<div class="container"> 
-<h2> Bir işiniz mi var? <span>GKC'ye ulaşın.</span> </h2> 
-<p> Elektrik, montaj, tadilat veya inşaat işleriniz için iletişime geçin. </p> 
-<div class="cta-buttons"> 
-<a href="tel:05102214893" class="hero-btn btn-orange"> 📞 0510 221 48 93 </a> 
-<a href="https://wa.me/905102214893" target="_blank" class="hero-btn btn-whatsapp"> 💬 WhatsApp'tan Yaz </a> 
-</div> 
-</div> 
-</section> 
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
 
-<!-- CONTACT --> 
-<section class="contact" id="iletisim"> 
-<div class="container"> 
-<div class="section-head"> 
-<div class="mini"> İLETİŞİM </div> 
-<h2> Bize Ulaşın </h2> 
-<p> İşiniz hakkında bilgi almak için hemen iletişime geçebilirsiniz. </p> 
-</div> 
-<div class="contact-grid"> 
-<div class="contact-card"> 
-<h3> GKC Elektrik ve İnşaat </h3> 
-<div class="contact-row"> 
-<div class="contact-icon"> 📞 </div> 
-<div> 
-<small> Telefon </small> 
-<br> 
-<a href="tel:05102214893"> 0510 221 48 93 </a> 
-</div> 
-</div> 
-<div class="contact-row"> 
-<div class="contact-icon"> 💬 </div> 
-<div> 
-<small> WhatsApp </small> 
-<br> 
-<a href="https://wa.me/905102214893" target="_blank"> WhatsApp'tan Yaz </a> 
-</div> 
-</div> 
-<div class="contact-row"> 
-<div class="contact-icon"> 📍 </div> 
-<div> 
-<small> Hizmet Bölgesi </small> 
-<br> 
-<strong> Ankara Geneli </strong> 
-</div> 
-</div> 
-</div> 
-<div class="map-box"> 
-<div> 
-<h3> 📍 ANKARA </h3> 
-<p> Ankara genelinde elektrik, montaj, tadilat ve inşaat hizmetleri. </p> 
-</div> 
-</div> 
-</div> 
-</div> 
-</section> 
+.logoIcon{
+    width:43px;
+    height:43px;
+    border-radius:13px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(135deg,#20d782,#168cff);
+    font-size:23px;
+}
 
-<!-- FOOTER --> 
-<footer> 
-<p> <strong> GKC <span>ELEKTRİK VE İNŞAAT</span> </strong> </p> 
-<p> © 2026 - Ankara </p> 
-</footer> 
+.logo h1{
+    font-size:20px;
+}
 
-<!-- FLOATING BUTTONS --> 
-<div class="floating"> 
-<a href="https://wa.me/905102214893" target="_blank" class="float float-wa"> 💬 </a> 
-<a href="tel:05102214893" class="float float-phone"> 📞 </a> 
-</div> 
-</body> 
-</html>
+.logo span{
+    color:#7589a0;
+    font-size:11px;
+}
+
+.cash{
+    text-align:right;
+}
+
+.cash small{
+    color:#71869e;
+    display:block;
+    font-size:11px;
+}
+
+.cash strong{
+    color:#45e69a;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:18px;
+}
+
+.dashboard{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+}
+
+.card{
+    background:#101c2d;
+    border:1px solid #1c344c;
+    border-radius:18px;
+    padding:17px;
+}
+
+.card small{
+    color:#8092a8;
+}
+
+.card h2{
+    margin-top:8px;
+    font-size:21px;
+}
+
+.green{
+    color:#35dd91!important;
+}
+
+.red{
+    color:#ff5d70!important;
+}
+
+/* =========================
+   MARKET
+========================= */
+
+.sectionTitle{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:25px 0 12px;
+}
+
+.sectionTitle h2{
+    font-size:19px;
+}
+
+.sectionTitle span{
+    color:#71869e;
+    font-size:12px;
+}
+
+.market{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+}
+
+.asset{
+    background:#101c2d;
+    border:1px solid #1c344c;
+    border-radius:18px;
+    padding:15px;
+    transition:.2s;
+}
+
+.asset:active{
+    transform:scale(.98);
+}
+
+.assetName{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    cursor:pointer;
+}
+
+.coin{
+    width:43px;
+    height:43px;
+    border-radius:50%;
+    background:#263c55;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:20px;
+}
+
+.assetName strong{
+    display:block;
+}
+
+.assetName small{
+    color:#71869e;
+}
+
+.price{
+    font-size:20px;
+    font-weight:bold;
+    margin-top:17px;
+}
+
+.change{
+    margin-top:5px;
+    font-size:13px;
+}
+
+.assetButtons{
+    display:flex;
+    gap:7px;
+    margin-top:14px;
+}
+
+.assetButtons button{
+    flex:1;
+    border:0;
+    border-radius:10px;
+    padding:10px;
+    font-weight:bold;
+}
+
+.buy{
+    background:#19c778;
+    color:#fff;
+}
+
+.sell{
+    background:#e94d64;
+    color:#fff;
+}
+
+.detailHint{
+    color:#66809b;
+    font-size:10px;
+    margin-top:10px;
+}
+
+/* =========================
+   NEWS
+========================= */
+
+.news{
+    background:#101c2d;
+    border:1px solid #1c344c;
+    border-radius:18px;
+    padding:16px;
+}
+
+.newsItem{
+    display:flex;
+    gap:12px;
+    padding:12px 0;
+    border-bottom:1px solid #1c3044;
+}
+
+.newsItem:last-child{
+    border-bottom:0;
+}
+
+.newsIcon{
+    font-size:24px;
+}
+
+.newsText strong{
+    display:block;
+    margin-bottom:4px;
+}
+
+.newsText small{
+    color:#8092a8;
+}
+
+/* =========================
+   EXPERT
+========================= */
+
+.expert{
+    background:linear-gradient(135deg,#172e4b,#101c2d);
+    border:1px solid #28547c;
+    border-radius:18px;
+    padding:18px;
+}
+
+.expert p{
+    color:#9eafc1;
+    line-height:1.5;
+    margin:8px 0 15px;
+}
+
+.expert button{
+    width:100%;
+    border:0;
+    border-radius:11px;
+    padding:13px;
+    background:#168cff;
+    color:white;
+    font-weight:bold;
+}
+
+/* =========================
+   PORTFOLYO
+========================= */
+
+.portfolioItem{
+    background:#101c2d;
+    border:1px solid #1c344c;
+    border-radius:15px;
+    padding:15px;
+    margin-bottom:10px;
+}
+
+.portfolioTop{
+    display:flex;
+    justify-content:space-between;
+}
+
+.portfolioBottom{
+    display:flex;
+    justify-content:space-between;
+    color:#8092a8;
+    margin-top:8px;
+    font-size:12px;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal{
+    position:fixed;
+    inset:0;
+    z-index:500;
+    background:#000c;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:15px;
+}
+
+.modalBox{
+    width:100%;
+    max-width:510px;
+    max-height:94vh;
+    overflow:auto;
+    background:#101c2d;
+    border:1px solid #29435d;
+    border-radius:22px;
+    padding:20px;
+}
+
+.close{
+    border:0;
+    width:35px;
+    height:35px;
+    border-radius:50%;
+    background:#263548;
+    color:white;
+    font-size:20px;
+}
+
+/* =========================
+   DETAY
+========================= */
+
+.detailHeader{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.detailPrice{
+    margin-top:18px;
+}
+
+.detailPrice strong{
+    font-size:29px;
+}
+
+.detailChange{
+    margin-top:5px;
+}
+
+.chartBox{
+    margin-top:18px;
+    background:#07111f;
+    border:1px solid #1d354c;
+    border-radius:15px;
+    padding:10px;
+}
+
+canvas{
+    width:100%;
+    height:230px;
+    display:block;
+}
+
+.timeButtons{
+    display:flex;
+    gap:7px;
+    margin-top:10px;
+}
+
+.timeButtons button{
+    flex:1;
+    border:1px solid #2b4762;
+    background:#17283b;
+    color:#9eafc1;
+    padding:8px 3px;
+    border-radius:8px;
+    font-size:11px;
+}
+
+.timeButtons button.active{
+    background:#168cff;
+    color:white;
+    border-color:#168cff;
+}
+
+.detailActions{
+    display:flex;
+    gap:9px;
+    margin-top:15px;
+}
+
+.detailActions button{
+    flex:1;
+    border:0;
+    border-radius:11px;
+    padding:13px;
+    font-weight:bold;
+}
+
+.expertDetail{
+    margin-top:10px;
+    width:100%;
+    padding:12px;
+    border:0;
+    border-radius:10px;
+    background:#263548;
+    color:white;
+}
+
+/* =========================
+   UZMAN SONUÇ
+========================= */
+
+.expertDecision{
+    text-align:center;
+    font-size:29px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.analysisBox{
+    background:#07111f;
+    border:1px solid #1d354c;
+    border-radius:13px;
+    padding:15px;
+    line-height:1.8;
+}
+
+.forecastBox{
+    margin-top:12px;
+    background:#17283b;
+    border-radius:13px;
+    padding:15px;
+    line-height:1.6;
+}
+
+.indicatorGrid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:8px;
+    margin-top:12px;
+}
+
+.indicator{
+    background:#17283b;
+    border-radius:10px;
+    padding:10px;
+    text-align:center;
+}
+
+.indicator small{
+    display:block;
+    color:#7e94aa;
+    font-size:10px;
+}
+
+.indicator strong{
+    display:block;
+    margin-top:5px;
+    font-size:13px;
+}
+
+/* =========================
+   TRADE
+========================= */
+
+.modalBox input{
+    width:100%;
+    padding:13px;
+    margin:12px 0;
+    border-radius:10px;
+    border:1px solid #34506c;
+    background:#07111f;
+    color:white;
+    outline:none;
+}
+
+.modalButtons{
+    display:flex;
+    gap:9px;
+}
+
+.modalButtons button{
+    flex:1;
+    border:0;
+    padding:13px;
+    border-radius:10px;
+    font-weight:bold;
+}
+
+.cancel{
+    background:#263548;
+    color:white;
+}
+
+/* =========================
+   RESULT
+========================= */
+
+#resultScreen{
+    position:fixed;
+    inset:0;
+    z-index:900;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#07111f;
+    text-align:center;
+    padding:20px;
+}
+
+.resultBox{
+    max-width:430px;
+}
+
+.resultEmoji{
+    font-size:75px;
+}
+
+.resultBox h1{
+    font-size:36px;
+    margin:15px 0;
+}
+
+.resultBox p{
+    color:#9eafc1;
+    line-height:1.6;
+}
+
+.restart{
+    margin-top:22px;
+    padding:14px 30px;
+    border:0;
+    border-radius:11px;
+    background:#168cff;
+    color:white;
+    font-weight:bold;
+}
+
+/* =========================
+   TOAST
+========================= */
+
+#toast{
+    position:fixed;
+    left:50%;
+    bottom:20px;
+    z-index:2000;
+    max-width:90%;
+    transform:translate(-50%,100px);
+    background:#17283b;
+    border:1px solid #34506c;
+    padding:13px 18px;
+    border-radius:12px;
+    text-align:center;
+    transition:.3s;
+}
+
+#toast.show{
+    transform:translate(-50%,0);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:850px){
+    .market{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:600px){
+    .market{
+        grid-template-columns:1fr;
+    }
+
+    .dashboard{
+        grid-template-columns:1fr 1fr;
+    }
