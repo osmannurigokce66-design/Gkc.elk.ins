@@ -3,141 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gökçe Elektrik & İnşaat | Ankara Usta Hizmetleri</title>
+    <title>Gökçe Elektrik & İnşaat | Usta Elinden Güvenilir Çözümler</title>
     <style>
         :root {
-            --primary: #0f172a;
-            --accent: #f59e0b;
-            --accent-hover: #d97706;
-            --bg-light: #f8fafc;
-            --text-main: #334155;
-            --text-muted: #64748b;
+            --primary: #212529;
+            --accent: #e0a800;
+            --bg-body: #f7f5f0;
             --card-bg: #ffffff;
-            --border-color: #e2e8f0;
+            --text-main: #333333;
+            --text-muted: #666666;
+            --border-color: #e5dfd3;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
-            background-color: var(--bg-light);
+            background-color: var(--bg-body);
             color: var(--text-main);
-            line-height: 1.7;
+            line-height: 1.6;
         }
 
         header {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            background-color: var(--primary);
             color: white;
             text-align: center;
-            padding: 70px 20px;
-            border-bottom: 4px solid var(--accent);
+            padding: 50px 20px;
+            border-bottom: 5px solid var(--accent);
         }
 
         header h1 {
-            font-size: 2.8rem;
+            font-size: 2.3rem;
             color: var(--accent);
-            margin-bottom: 12px;
-            letter-spacing: -0.5px;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
         }
 
         header p {
-            font-size: 1.15rem;
-            color: #cbd5e1;
-            max-width: 650px;
+            font-size: 1.1rem;
+            color: #d1d5db;
+            max-width: 600px;
             margin: 0 auto;
-            font-weight: 300;
         }
 
         .badge-location {
             display: inline-block;
-            background: #dc2626;
+            background: #b91c1c;
             color: white;
-            padding: 6px 16px;
-            border-radius: 30px;
-            font-size: 0.9rem;
-            margin-top: 20px;
+            padding: 5px 14px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            margin-top: 15px;
             font-weight: 600;
-            box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 960px;
             margin: auto;
-            padding: 50px 20px;
+            padding: 40px 20px;
         }
 
         .about-section {
             background: var(--card-bg);
-            padding: 35px;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
-            margin-bottom: 50px;
-            text-align: center;
+            padding: 30px;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            margin-bottom: 40px;
             border: 1px solid var(--border-color);
+            border-left: 5px solid var(--accent);
         }
 
         .about-section h2 {
             color: var(--primary);
-            margin-bottom: 15px;
-            font-size: 1.8rem;
+            margin-bottom: 12px;
+            font-size: 1.5rem;
         }
 
         .about-section p {
             color: var(--text-muted);
             font-size: 1.05rem;
-            max-width: 800px;
-            margin: 0 auto;
         }
 
         .section-title {
-            text-align: center;
-            font-size: 2.1rem;
-            margin-bottom: 35px;
+            font-size: 1.6rem;
+            margin-bottom: 25px;
             color: var(--primary);
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background: var(--accent);
-            margin: 8px auto 0;
-            border-radius: 2px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-bottom: 60px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
         }
 
         .service-card {
             background: var(--card-bg);
-            padding: 30px 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            border-top: 4px solid var(--accent);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-left: 1px solid var(--border-color);
-            border-right: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
+            padding: 22px;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s;
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 20px -3px rgba(0, 0, 0, 0.08);
+            transform: translateY(-3px);
         }
 
         .service-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 10px;
+            font-size: 1.15rem;
+            margin-bottom: 8px;
             color: var(--primary);
         }
 
@@ -148,37 +129,32 @@
 
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-bottom: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
         }
 
         .portfolio-item {
             background: var(--card-bg);
-            border-radius: 12px;
+            border-radius: 6px;
             overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
             border: 1px solid var(--border-color);
-            transition: transform 0.3s ease;
-        }
-
-        .portfolio-item:hover {
-            transform: translateY(-5px);
         }
 
         .portfolio-item img {
             width: 100%;
-            height: 190px;
+            height: 180px;
             object-fit: cover;
         }
 
         .portfolio-content {
-            padding: 20px;
+            padding: 15px;
         }
 
         .portfolio-content h3 {
-            font-size: 1.1rem;
-            margin-bottom: 8px;
+            font-size: 1.05rem;
+            margin-bottom: 6px;
             color: var(--primary);
         }
 
@@ -188,31 +164,31 @@
         }
 
         .contact-box {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            background: var(--primary);
             color: white;
             text-align: center;
-            padding: 50px 30px;
-            border-radius: 16px;
-            margin-top: 60px;
-            box-shadow: 0 15px 30px rgba(15, 23, 42, 0.2);
+            padding: 40px 20px;
+            border-radius: 6px;
+            margin-top: 40px;
+            border-top: 4px solid var(--accent);
         }
 
         .contact-box h2 {
-            margin-bottom: 12px;
-            font-size: 2rem;
+            margin-bottom: 10px;
+            font-size: 1.8rem;
             color: var(--accent);
         }
 
         .contact-box p {
-            color: #cbd5e1;
-            margin-bottom: 30px;
-            font-size: 1.05rem;
+            color: #d1d5db;
+            margin-bottom: 25px;
+            font-size: 1rem;
         }
 
         .btn-group {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 12px;
             flex-wrap: wrap;
         }
 
@@ -220,37 +196,30 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 14px 28px;
+            padding: 12px 24px;
             text-decoration: none;
             font-weight: 600;
-            border-radius: 8px;
+            border-radius: 4px;
             color: white;
-            font-size: 1rem;
-            transition: opacity 0.2s ease, transform 0.2s ease;
-        }
-
-        .contact-btn:hover {
-            opacity: 0.9;
-            transform: scale(1.03);
+            font-size: 0.95rem;
         }
 
         .btn-phone { background-color: var(--accent); color: var(--primary); font-weight: 700; }
-        .btn-whatsapp { background-color: #25d366; }
-        .btn-email { background-color: #3b82f6; }
+        .btn-whatsapp { background-color: #16a34a; }
+        .btn-email { background-color: #2563eb; }
 
         footer {
             text-align: center;
             padding: 30px;
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             border-top: 1px solid var(--border-color);
-            margin-top: 50px;
+            margin-top: 40px;
         }
         
         #secretYear {
             cursor: pointer;
             user-select: none;
-            display: inline-block;
             font-weight: bold;
             color: var(--primary);
         }
@@ -263,60 +232,55 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(5px);
+            background: rgba(0, 0, 0, 0.6);
             justify-content: center;
             align-items: center;
             z-index: 1000;
         }
         .admin-box {
             background: white;
-            padding: 35px;
-            border-radius: 14px;
+            padding: 30px;
+            border-radius: 6px;
             width: 90%;
-            max-width: 420px;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            border-top: 4px solid var(--accent);
         }
         .admin-box h3 {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             color: var(--primary);
-            font-size: 1.4rem;
+            font-size: 1.3rem;
         }
         .admin-box label {
             display: block;
-            margin-top: 15px;
-            font-size: 0.9rem;
+            margin-top: 12px;
+            font-size: 0.85rem;
             font-weight: 600;
             color: var(--text-main);
         }
         .admin-box input {
             width: 100%;
-            padding: 10px 12px;
-            margin-top: 6px;
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            font-size: 1rem;
-            outline: none;
-        }
-        .admin-box input:focus {
-            border-color: var(--accent);
+            padding: 9px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 0.95rem;
         }
         .admin-box button {
             width: 100%;
-            padding: 12px;
-            margin-top: 20px;
+            padding: 10px;
+            margin-top: 18px;
             background: var(--accent);
             border: none;
             font-weight: 700;
             cursor: pointer;
-            border-radius: 6px;
+            border-radius: 4px;
             color: var(--primary);
-            font-size: 1rem;
         }
         .close-admin {
             background: #dc2626 !important;
             color: white !important;
-            margin-top: 10px !important;
+            margin-top: 8px !important;
         }
     </style>
 </head>
@@ -324,93 +288,93 @@
 
     <header>
         <h1>Gökçe Elektrik & İnşaat</h1>
-        <p>"Tek Elden, Dürüst ve Temiz İşçilikle Evinizin Tüm İhtiyaçları Yanınızda."</p>
-        <span class="badge-location">📍 Yalnızca Ankara İçi Hizmet</span>
+        <p>Aracı yok, komisyon yok. Doğrudan usta eli, dürüst ve temiz işçilik.</p>
+        <span class="badge-location">📍 Sadece Ankara İçi Hizmet</span>
     </header>
 
     <div class="container">
         
-        <!-- Hakkımda / Açıklama Kısmı -->
+        <!-- Hakkımda -->
         <div class="about-section">
-            <h2>Hakkımda & Çalışma Anlayışım</h2>
-            <p>Yılların kazandırdığı tecrübeyle ev ve iş yerlerinizin tüm elektrik arızaları, montaj ve küçük çaplı tadilat işlerini tek başıma, büyük bir titizlik ve dürüstlükle yapıyorum. Aracı firma, taşeron veya komisyoncu olmadan doğrudan usta ile muhatap olursunuz. Her zaman en ekonomik çözümü sunar, evinizi kendi evim gibi temiz ve özenli bırakırım.</p>
+            <h2>Usta'dan Notlar</h2>
+            <p>Yıllardır bu işin içindeyim. Evinizde çıkan elektrik arızalarını, priz sorunlarını, avize montajını veya ufak tefek inşaat/tadilat işlerini kendi evim gibi özenle yapıyorum. Telefonda ne konuşursak işin başında o geçerlidir, sürpriz maliyetlerle karşılaşmazsınız. Söz verdiğim saatte işimin başında olurum.</p>
         </div>
 
-        <h2 class="section-title">Sunduğum Hizmetler</h2>
+        <h2 class="section-title">Yaptığım İşler & Hizmetler</h2>
         <div class="services-grid">
             <div class="service-card">
-                <h3>⚡ Elektrik Arıza & Tesisat</h3>
-                <p>Priz, anahtar değişimi, sigorta arızaları, kısa devre tespiti ve ev içi eski kablo hatlarının yenilenmesi.</p>
+                <h3>⚡ Elektrik Arızaları & Tesisat</h3>
+                <p>Priz, anahtar değişimi, sigorta atmaları, kısa devreler ve ev içi hat yenileme işleri.</p>
             </div>
             <div class="service-card">
-                <h3>💡 Aydınlatma Sistemleri</h3>
-                <p>Avize montajı, aplik takma, LED spot, şerit LED döşeme ve sensörlü koridor lambası kurulumları.</p>
+                <h3>💡 Aydınlatma & Avize Montajı</h3>
+                <p>Her model avizenin tavana güvenli asılması, aplik, LED spot ve duy değişimleri.</p>
             </div>
             <div class="service-card">
-                <h3>🛠️ Küçük Çaplı Tadilat & Tamir</h3>
-                <p>Alçı tamiratı, duvar delme, dübel çakma, kablo kanalı gizleme ve ev içi ufak onarım işleri.</p>
+                <h3>🛠️ Ufak Tadilat & Tamirat</h3>
+                <p>Alçı tamiratı, duvar delme, dübel çakma, kablo kanalı kapatma ve ev içi onarımlar.</p>
             </div>
             <div class="service-card">
-                <h3>🏠 Ev İçi Montaj Hizmetleri</h3>
-                <p>Sağlam korniş ve perde montajı, duvar rafları, tablo, pano asma ve televizyon askı aparatı montajı.</p>
+                <h3>🏠 Ev İçi Montaj İşleri</h3>
+                <p>Korniş takma, raf montajı, tablo asma ve televizyon askı aparatı kurulumu.</p>
             </div>
             <div class="service-card">
-                <h3>🎨 Boya & Rötuş İşleri</h3>
-                <p>İç mekan oda boyama, duvar çatlak tamiratları ve delik kapatma sonrası kusursuz boya rötuşları.</p>
+                <h3>🎨 Boya & Rötuş Tamiri</h3>
+                <p>Ufak çaplı oda boyama, duvar çatlakları doldurma ve delik kapatma rötuşları.</p>
             </div>
             <div class="service-card">
-                <h3>🔌 Cihaz ve Beyaz Eşya Kurulum</h3>
-                <p>Ani su ısıtıcı (şofben), mutfak aspiratörü, banyo vantilatörü elektrik bağlantıları ve montajları.</p>
+                <h3>🔌 Cihaz Bağlantıları</h3>
+                <p>Ani su ısıtıcı (şofben), aspiratör ve banyo vantilatörlerinin elektrik bağlantıları.</p>
             </div>
         </div>
 
-        <h2 class="section-title">Örnek Çalışmalarım (Portföy)</h2>
+        <h2 class="section-title">Örnek Çalışmalarımdan Kareler</h2>
         <div class="portfolio-grid">
             <div class="portfolio-item">
                 <img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTINTTYcKCD4cNAcvq-pgR3QpDNZKh2JEvp-kKwuoPQoa2uf8wvetUs25JHpTDqlJJB1ltdx0LaVx5WZ0s9xWpzaftzMqemGhmV" alt="Avize Montajı">
                 <div class="portfolio-content">
-                    <h3>Salon Avize Montajı</h3>
-                    <p>Modern avizenin tavana güvenli şekilde askılanması ve elektrik bağlantısı.</p>
+                    <h3>Salon Avize Bağlantısı</h3>
+                    <p>Sağlam tavan askısı ve temiz kablolama.</p>
                 </div>
             </div>
             <div class="portfolio-item">
                 <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcSY3VTSpsaWMutD02pgOSJlVgiFdJw2_BY2hBZgYGKgWXP7Ru0LzbNGZhvQdCpVb9e6PBxwln9bx36Sh6aZGfQckuBZTnDTbpEb" alt="Alçı Tamiratı">
                 <div class="portfolio-content">
-                    <h3>Duvar ve Alçı Tamiratı</h3>
-                    <p>Kablolama sonrası açılan kanalların pürüzsüzce sıvanıp kapatılması.</p>
+                    <h3>Duvar ve Alçı Rötuşu</h3>
+                    <p>Kanal açılan yerlerin pürüzsüz kapatılması.</p>
                 </div>
             </div>
             <div class="portfolio-item">
                 <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=500&q=80" alt="Priz Değişimi">
                 <div class="portfolio-content">
-                    <h3>Priz ve Sigorta Yenileme</h3>
-                    <p>Güvensiz ve eskiyen klemenslerin modern ve güvenli olanlarla değişimi.</p>
+                    <h3>Güvenli Priz Değişimi</h3>
+                    <p>Eski klemenslerin yenilenmesi.</p>
                 </div>
             </div>
             <div class="portfolio-item">
                 <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=500&q=80" alt="Korniş Montajı">
                 <div class="portfolio-content">
-                    <h3>Korniş ve Perde Montajı</h3>
-                    <p>Evin tüm odalarına dengeli, sağlam ve ölçülü korniş uygulaması.</p>
+                    <h3>Sağlam Korniş Montajı</h3>
+                    <p>Ölçülü ve dengeli perde rayı takılması.</p>
                 </div>
             </div>
         </div>
 
         <div class="contact-box">
-            <h2>Hemen İletişime Geçin</h2>
-            <p>Ankara içi tüm elektrik, montaj ve tamirat işleriniz için dilediğiniz zaman arayabilirsiniz.</p>
+            <h2>İletişim</h2>
+            <p>Ankara genelinde tüm elektrik ve ev tamiratı işleriniz için arayabilirsiniz.</p>
             
             <div class="btn-group">
                 <a href="tel:05102214893" id="phoneLink" class="contact-btn btn-phone">📞 Ara: <span id="phoneText">0510 221 48 93</span></a>
-                <a href="https://wa.me/905102214893" id="waLink" target="_blank" class="contact-btn btn-whatsapp">💬 WhatsApp İle Yaz</a>
-                <a href="mailto:gokce@example.com" id="mailLink" class="contact-btn btn-email">✉️ E-posta Gönder</a>
+                <a href="https://wa.me/905102214893" id="waLink" target="_blank" class="contact-btn btn-whatsapp">💬 WhatsApp</a>
+                <a href="mailto:gokce@example.com" id="mailLink" class="contact-btn btn-email">✉️ E-posta</a>
             </div>
         </div>
 
     </div>
 
     <footer>
-        <p>Gökçe Elektrik & İnşaat © <span id="secretYear">2026</span> - Tüm Hakları Saklıdır | Ankara</p>
+        <p>Gökçe Elektrik & İnşaat © <span id="secretYear">2026</span> - Ankara</p>
     </footer>
 
     <!-- Gizli Admin Paneli Modal -->
@@ -427,7 +391,7 @@
             <label>E-posta Adresi:</label>
             <input type="email" id="adminMail" value="gokce@example.com">
             
-            <button onclick="saveContactInfo()">Kaydet ve Güncelle</button>
+            <button onclick="saveContactInfo()">Bilgileri Kaydet</button>
             <button class="close-admin" onclick="closeAdmin()">Kapat</button>
         </div>
     </div>
@@ -465,7 +429,7 @@
             }
         });
 
-        // Telefon/Tablet için: "2026" yazısına 3 kez tıklama
+        // Telefon/Tablet için: En alttaki "2026" yazısına 3 kez art arda tıklama
         let clickCount = 0;
         document.getElementById('secretYear').addEventListener('click', function() {
             clickCount++;
@@ -492,7 +456,7 @@
             if(wa) localStorage.setItem('gokce_wa', wa);
             if(mail) localStorage.setItem('gokce_mail', mail);
 
-            alert('İletişim bilgileri başarıyla güncellendi!');
+            alert('Bilgiler güncellendi!');
             location.reload();
         }
     </script>
