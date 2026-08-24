@@ -122,9 +122,10 @@
             font-size: 0.9rem;
         }
         
-        #secretTrigger {
+        #secretYear {
             cursor: pointer;
             user-select: none;
+            display: inline-block;
         }
 
         /* Gizli Admin Paneli Stilleri */
@@ -246,7 +247,7 @@
     </div>
 
     <footer>
-        <p>Gökçe Elektrik & İnşaat © 2026 - Ankara <span id="secretTrigger">.</span></p>
+        <p>Gökçe Elektrik & İnşaat © <span id="secretYear">2026</span> - Ankara</p>
     </footer>
 
     <!-- Gizli Admin Paneli Modal -->
@@ -289,7 +290,6 @@
                 document.getElementById('adminMail').value = savedMail;
             }
 
-            // Mobilde URL sonuna #admin yazıldıysa paneli aç
             if(window.location.hash === '#admin') {
                 document.getElementById('adminModal').style.display = 'flex';
             }
@@ -303,15 +303,15 @@
             }
         });
 
-        // TABLET VE TELEFON İÇİN: Footer'daki gizli noktaya 5 kez art arda tıklama
+        // MOBİL/TABLET İÇİN: "2026" yazısına 3 kez art arda tıklama
         let clickCount = 0;
-        document.getElementById('secretTrigger').addEventListener('click', function() {
+        document.getElementById('secretYear').addEventListener('click', function() {
             clickCount++;
-            if(clickCount >= 5) {
+            if(clickCount >= 3) {
                 document.getElementById('adminModal').style.display = 'flex';
                 clickCount = 0;
             }
-            setTimeout(() => { clickCount = 0; }, 2000); // 2 saniye içinde basılmazsa sıfırlanır
+            setTimeout(() => { clickCount = 0; }, 2000); // 2 saniye içinde 3 kez basılmazsa sıfırlanır
         });
 
         function closeAdmin() {
