@@ -147,10 +147,6 @@ a {
   transform: translateY(-1px);
 }
 
-.nav-cta:active {
-  transform: translateY(0);
-}
-
 /* ================= HERO SECTION ================= */
 .hero {
   position: relative;
@@ -202,23 +198,13 @@ a {
   height: 8px;
   background-color: #fbbf24;
   border-radius: 50%;
-  box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.7);
   animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
-  0% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.7);
-  }
-  70% {
-    transform: scale(1);
-    box-shadow: 0 0 0 6px rgba(251, 191, 36, 0);
-  }
-  100% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(251, 191, 36, 0);
-  }
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(251, 191, 36, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(251, 191, 36, 0); }
 }
 
 .hero-title {
@@ -281,7 +267,7 @@ a {
   transform: translateY(-2px);
 }
 
-/* Hero Showcase Card */
+/* Showcase Card */
 .hero-visual {
   display: flex;
   justify-content: center;
@@ -298,12 +284,6 @@ a {
   backdrop-filter: blur(16px);
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
   text-align: center;
-  position: relative;
-  transition: transform 0.3s ease;
-}
-
-.showcase-card:hover {
-  transform: translateY(-5px);
 }
 
 .showcase-logo-icon {
@@ -328,7 +308,6 @@ a {
   font-size: 22px;
   font-weight: 800;
   margin-bottom: 6px;
-  letter-spacing: -0.5px;
 }
 
 .showcase-card p {
@@ -356,7 +335,6 @@ a {
   font-size: 11px;
   color: #64748b;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
 }
 
 /* ================= TRUST BANNER ================= */
@@ -383,11 +361,6 @@ a {
   display: flex;
   align-items: center;
   gap: 16px;
-  transition: transform 0.2s ease;
-}
-
-.trust-item:hover {
-  transform: translateY(-2px);
 }
 
 .trust-icon {
@@ -415,7 +388,7 @@ a {
   color: var(--text-muted);
 }
 
-/* ================= COMMON SECTION STYLES ================= */
+/* ================= COMMON SECTION ================= */
 .section {
   padding: 100px 0;
 }
@@ -461,30 +434,38 @@ a {
   align-items: center;
 }
 
-.about-image-wrapper {
-  position: relative;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  box-shadow: var(--shadow-elevated);
-  height: 460px;
-}
-
-.about-image-wrapper img {
+/* Placeholder for custom photo instead of stock image */
+.about-image-placeholder {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  height: 420px;
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  border: 2px dashed rgba(255, 255, 255, 0.1);
+  text-align: center;
+  padding: 24px;
+  box-shadow: var(--shadow-elevated);
 }
 
-.about-image-wrapper:hover img {
-  transform: scale(1.03);
+.about-image-placeholder span {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.about-image-placeholder p {
+  font-size: 14px;
+  font-weight: 600;
+  color: #94a3b8;
 }
 
 .about-content h2 {
   font-size: clamp(32px, 4vw, 42px);
   font-weight: 800;
   color: var(--primary);
-  letter-spacing: -1px;
   line-height: 1.2;
   margin-bottom: 20px;
 }
@@ -546,13 +527,12 @@ a {
   border: 1px solid var(--border-color);
   padding: 36px 30px;
   border-radius: var(--radius-md);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: var(--shadow-subtle);
+  transition: transform 0.3s ease;
 }
 
 .service-card:hover {
-  transform: translateY(-6px);
-  border-color: #cbd5e1;
+  transform: translateY(-5px);
   box-shadow: var(--shadow-elevated);
 }
 
@@ -567,12 +547,6 @@ a {
   justify-content: center;
   font-size: 24px;
   margin-bottom: 24px;
-  transition: background 0.3s ease, border-color 0.3s ease;
-}
-
-.service-card:hover .service-icon {
-  background: #fef3c7;
-  border-color: #fde68a;
 }
 
 .service-card h3 {
@@ -580,13 +554,11 @@ a {
   font-weight: 700;
   color: var(--primary);
   margin-bottom: 10px;
-  letter-spacing: -0.3px;
 }
 
 .service-card p {
   color: var(--text-muted);
   font-size: 14px;
-  line-height: 1.6;
 }
 
 /* ================= WHY US SECTION ================= */
@@ -618,12 +590,6 @@ a {
   padding: 30px 24px;
   border-radius: var(--radius-md);
   text-align: center;
-  transition: background 0.3s ease, transform 0.3s ease;
-}
-
-.why-card:hover {
-  background: rgba(255, 255, 255, 0.06);
-  transform: translateY(-4px);
 }
 
 .why-icon {
@@ -642,7 +608,7 @@ a {
   font-size: 13px;
 }
 
-/* ================= PORTFOLIO SECTION ================= */
+/* ================= PORTFOLIO / ÇALIŞMALAR SECTION ================= */
 .portfolio-container {
   max-width: 1280px;
   margin: 0 auto;
@@ -661,28 +627,30 @@ a {
   overflow: hidden;
   box-shadow: var(--shadow-subtle);
   border: 1px solid var(--border-color);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.portfolio-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-elevated);
+/* Placeholder for custom photo to be added later */
+.portfolio-image-placeholder {
+  height: 260px;
+  background: #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  border-bottom: 1px solid var(--border-color);
+  text-align: center;
+  padding: 20px;
 }
 
-.portfolio-image {
-  height: 280px;
-  overflow: hidden;
+.portfolio-image-placeholder span {
+  font-size: 36px;
+  margin-bottom: 8px;
 }
 
-.portfolio-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.portfolio-card:hover .portfolio-image img {
-  transform: scale(1.04);
+.portfolio-image-placeholder p {
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .portfolio-info {
@@ -730,7 +698,6 @@ a {
   font-weight: 800;
   color: var(--primary);
   margin-bottom: 24px;
-  letter-spacing: -0.5px;
 }
 
 .contact-detail-list {
@@ -764,7 +731,6 @@ a {
   font-size: 12px;
   color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
   font-weight: 600;
 }
 
@@ -772,11 +738,6 @@ a {
   font-size: 16px;
   font-weight: 700;
   color: var(--primary);
-  transition: color 0.2s ease;
-}
-
-.contact-row a:hover {
-  color: #d97706;
 }
 
 .map-wrapper {
@@ -859,48 +820,31 @@ a {
   font-size: 22px;
   color: #ffffff;
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+  transition: transform 0.25s ease;
 }
 
 .float-btn:hover {
   transform: scale(1.1);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
 }
 
-.float-phone {
-  background: #f59e0b;
-}
+.float-phone { background: #f59e0b; }
+.float-whatsapp { background: #25d366; }
 
-.float-whatsapp {
-  background: #25d366;
-}
-
-/* ================= RESPONSIVE DESIGN ================= */
+/* ================= RESPONSIVE ================= */
 @media(max-width: 992px) {
   .hero-grid, .about-grid, .contact-grid {
     grid-template-columns: 1fr;
     gap: 40px;
   }
-  .hero-visual {
-    order: -1;
-  }
-  .trust-grid, .services-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .why-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .nav-links {
-    display: none;
-  }
+  .hero-visual { order: -1; }
+  .trust-grid, .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .nav-links { display: none; }
 }
 
 @media(max-width: 640px) {
   .trust-grid, .services-grid, .why-grid, .portfolio-grid, .features-list {
     grid-template-columns: 1fr;
-  }
-  .hero {
-    padding: 60px 0 100px;
   }
   .footer-content {
     flex-direction: column;
@@ -1003,8 +947,10 @@ a {
 <!-- ABOUT SECTION -->
 <section class="section" id="hakkimizda">
   <div class="about-grid">
-    <div class="about-image-wrapper">
-      <img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=1000&q=85" alt="GKC Elektrik ve İnşaat Ekip Çalışması">
+    <!-- Kendi fotoğrafını eklemek için buradaki div yerine <img src="foto.jpg" alt="..."> koyabilirsin -->
+    <div class="about-image-placeholder">
+      <span>📷</span>
+      <p>Kendi Fotoğrafınızı Buraya Ekleyebilirsiniz</p>
     </div>
     <div class="about-content">
       <span class="section-tag">Hakkımızda</span>
@@ -1095,27 +1041,31 @@ a {
   </div>
 </section>
 
-<!-- PORTFOLIO SECTION -->
+<!-- PORTFOLIO / ÇALIŞMALAR SECTION -->
 <section class="section" id="calismalar">
   <div class="portfolio-container">
     <div class="section-header">
       <span class="section-tag">Referanslar</span>
       <h2 class="section-title">Örnek Çalışmalarımız</h2>
-      <p class="section-desc">Tamamladığımız bazı projelerden kareler.</p>
+      <p class="section-desc">Kendi iş sahalarımızdan ve projelerimizden kareler.</p>
     </div>
     <div class="portfolio-grid">
+      <!-- Örnek Çalışma 1 -->
       <div class="portfolio-card">
-        <div class="portfolio-image">
-          <img src="https://images.unsplash.com/photo-1524484485831-a92ffc0de03f?auto=format&fit=crop&w=1000&q=85" alt="Aydınlatma Sistemleri">
+        <div class="portfolio-image-placeholder">
+          <span>🖼️</span>
+          <p>Çalışma Fotoğrafı 1 Eklenecek</p>
         </div>
         <div class="portfolio-info">
           <h3>Aydınlatma ve Avize Montajı</h3>
           <p>Modern salon aydınlatma ve gizli LED uygulamaları.</p>
         </div>
       </div>
+      <!-- Örnek Çalışma 2 -->
       <div class="portfolio-card">
-        <div class="portfolio-image">
-          <img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=1000&q=85" alt="Elektrik Tesisat">
+        <div class="portfolio-image-placeholder">
+          <span>🖼️</span>
+          <p>Çalışma Fotoğrafı 2 Eklenecek</p>
         </div>
         <div class="portfolio-info">
           <h3>Elektrik Panosu & Tesisat</h3>
@@ -1154,7 +1104,6 @@ a {
               </div>
             </div>
             <div class="contact-row">
-              <div class="contact-icon-Box" style="display:none"></div>
               <div class="contact-icon-box">📍</div>
               <div>
                 <small>Hizmet Bölgesi</small>
