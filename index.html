@@ -436,7 +436,7 @@ a {
 
 .about-image-box {
   width: 100%;
-  height: 420px;
+  height: 480px; /* Sabit yükseklik ile düzgün sınırlandırma */
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: var(--shadow-elevated);
@@ -446,7 +446,7 @@ a {
 .about-image-box img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Taşmayı önleyen kritik özellik */
   transition: transform 0.5s ease;
 }
 
