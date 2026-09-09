@@ -434,32 +434,24 @@ a {
   align-items: center;
 }
 
-/* Placeholder for custom photo instead of stock image */
-.about-image-placeholder {
+.about-image-box {
   width: 100%;
   height: 420px;
-  background: linear-gradient(135deg, #1e293b, #0f172a);
   border-radius: var(--radius-md);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #64748b;
-  border: 2px dashed rgba(255, 255, 255, 0.1);
-  text-align: center;
-  padding: 24px;
+  overflow: hidden;
   box-shadow: var(--shadow-elevated);
+  border: 1px solid var(--border-color);
 }
 
-.about-image-placeholder span {
-  font-size: 48px;
-  margin-bottom: 12px;
+.about-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
-.about-image-placeholder p {
-  font-size: 14px;
-  font-weight: 600;
-  color: #94a3b8;
+.about-image-box img:hover {
+  transform: scale(1.03);
 }
 
 .about-content h2 {
@@ -617,7 +609,7 @@ a {
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
 }
 
@@ -627,34 +619,34 @@ a {
   overflow: hidden;
   box-shadow: var(--shadow-subtle);
   border: 1px solid var(--border-color);
-}
-
-/* Placeholder for custom photo to be added later */
-.portfolio-image-placeholder {
-  height: 260px;
-  background: #e2e8f0;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #64748b;
+}
+
+.portfolio-image-box {
+  height: 240px;
+  width: 100%;
+  overflow: hidden;
   border-bottom: 1px solid var(--border-color);
-  text-align: center;
-  padding: 20px;
 }
 
-.portfolio-image-placeholder span {
-  font-size: 36px;
-  margin-bottom: 8px;
+.portfolio-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
 }
 
-.portfolio-image-placeholder p {
-  font-size: 13px;
-  font-weight: 600;
+.portfolio-card:hover .portfolio-image-box img {
+  transform: scale(1.05);
 }
 
 .portfolio-info {
   padding: 24px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .portfolio-info h3 {
@@ -839,6 +831,7 @@ a {
   .hero-visual { order: -1; }
   .trust-grid, .services-grid { grid-template-columns: repeat(2, 1fr); }
   .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
   .nav-links { display: none; }
 }
 
@@ -947,10 +940,8 @@ a {
 <!-- ABOUT SECTION -->
 <section class="section" id="hakkimizda">
   <div class="about-grid">
-    <!-- Kendi fotoğrafını eklemek için buradaki div yerine <img src="foto.jpg" alt="..."> koyabilirsin -->
-    <div class="about-image-placeholder">
-      <span>📷</span>
-      <p>Kendi Fotoğrafınızı Buraya Ekleyebilirsiniz</p>
+    <div class="about-image-box">
+      <img src="WhatsApp Image 2026-08-27 at 22.04.24.jpeg" alt="GKC Elektrik & İnşaat Kaba Yapı Sahası">
     </div>
     <div class="about-content">
       <span class="section-tag">Hakkımızda</span>
@@ -973,7 +964,7 @@ a {
     <div class="section-header">
       <span class="section-tag">Hizmetlerimiz</span>
       <h2 class="section-title">Neler Yapıyoruz?</h2>
-      <p class="section-desc">Ev ve iş yerlerinizin tüm teknik ihtiyaçları için tek noktadan çözümler.</p>
+      <p class="section-desc">Ev and iş yerlerinizin tüm teknik ihtiyaçları için tek noktadan çözümler.</p>
     </div>
     <div class="services-grid">
       <div class="service-card">
@@ -1047,29 +1038,37 @@ a {
     <div class="section-header">
       <span class="section-tag">Referanslar</span>
       <h2 class="section-title">Örnek Çalışmalarımız</h2>
-      <p class="section-desc">Kendi iş sahalarımızdan ve projelerimizden kareler.</p>
+      <p class="section-desc">Saha uygulamalarımızdan, çatı detaylarından ve kurulum projelerimizden kareler.</p>
     </div>
     <div class="portfolio-grid">
-      <!-- Örnek Çalışma 1 -->
+      <!-- Proje 1 -->
       <div class="portfolio-card">
-        <div class="portfolio-image-placeholder">
-          <span>🖼️</span>
-          <p>Çalışma Fotoğrafı 1 Eklenecek</p>
+        <div class="portfolio-image-box">
+          <img src="WhatsApp Image 2026-08-27 at 22.05.32.jpeg" alt="Çatı ve İnşaat Uygulaması">
         </div>
         <div class="portfolio-info">
-          <h3>Aydınlatma ve Avize Montajı</h3>
-          <p>Modern salon aydınlatma ve gizli LED uygulamaları.</p>
+          <h3>Çatı & Dış Yapı Uygulamaları</h3>
+          <p>Titiz işçilikle gerçekleştirilen çatı ve yalıtım projeleri.</p>
         </div>
       </div>
-      <!-- Örnek Çalışma 2 -->
+      <!-- Proje 2 -->
       <div class="portfolio-card">
-        <div class="portfolio-image-placeholder">
-          <span>🖼️</span>
-          <p>Çalışma Fotoğrafı 2 Eklenecek</p>
+        <div class="portfolio-image-box">
+          <img src="WhatsApp Image 2026-08-27 at 22.06.23.jpeg" alt="Raf Montajı ve Kurulum Sahası">
         </div>
         <div class="portfolio-info">
-          <h3>Elektrik Panosu & Tesisat</h3>
-          <p>Güvenli sigorta değişimi ve altyapı düzenlemesi.</p>
+          <h3>Sistem Kurulumu & Montaj</h3>
+          <p>Depo ve alan montajlarında güvenli ve profesyonel ekipler.</p>
+        </div>
+      </div>
+      <!-- Proje 3 -->
+      <div class="portfolio-card">
+        <div class="portfolio-image-box">
+          <img src="WhatsApp Image 2026-08-27 at 22.11.10.jpeg" alt="Depo ve Raf Sistemleri Detayı">
+        </div>
+        <div class="portfolio-info">
+          <h3>Proje Detayları & Altyapı</h3>
+          <p>Özel raf ve depolama alanları entegrasyonu.</p>
         </div>
       </div>
     </div>
